@@ -1,15 +1,9 @@
-version: "3.9"
-
 services:
   lsi-megaraid-storage-manager:
+    build: .
     container_name: lsi-megaraid-storage-manager
-    image: baptistecdr/lsi-megaraid-storage-manager:4.1.7@sha256:0d8d4cdd4de18fc7cdbcc51fef1ff0f0f2882539f049d307004cad07a7ab4325
     privileged: true
     environment:
-      - TZ=Europe/Paris
+      - TZ=Asia/Shanghai
       - ROOT_PASSWORD=myrootpassword
-      - DISPLAY=$DISPLAY
-    volumes:
-      - $HOME/.Xauthority:/root/.Xauthority
-      - /tmp/.X11-unix:/tmp/.X11-unix
     network_mode: host
